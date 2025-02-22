@@ -7,4 +7,27 @@ export default defineNuxtConfig({
   build: {
     transpile: ["vuetify"],
   },
+
+  modules: [
+    (_options, nuxt) => {
+      nuxt.hooks.hook("vite:extendConfig", (config) => {
+        // @ts-expect-error
+        config.plugins.push(vuetify({ autoImport: true }));
+      });
+    },
+    //...
+  ],
+  runtimeConfig: {
+    public: {
+      newsApiKey: process.env.NEWS_API_KEY,
+    },
+  },
+
+  vite: {
+    vue: {
+      template: {
+        transformAssetUrls,
+      },
+    },
+  },
 });
