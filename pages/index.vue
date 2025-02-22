@@ -17,27 +17,27 @@
 
       <News
         ref="general"
-        v-if="news.general.length"
+        v-if="news?.general?.length"
         title="General News"
-        :articles="news.general"
+        :articles="news?.general"
       />
       <News
         ref="sports"
-        v-if="news.sports.length"
+        v-if="news?.sports?.length"
         title="Sports"
-        :articles="news.sports"
+        :articles="news?.sports"
       />
       <News
         ref="business"
-        v-if="news.business.length"
+        v-if="news?.business?.length"
         title="Business"
-        :articles="news.business"
+        :articles="news?.business"
       />
       <News
         ref="politics"
-        v-if="news.politics.length"
+        v-if="news?.politics?.length"
         title="Politics"
-        :articles="news.politics"
+        :articles="news?.politics"
       />
     </v-container>
   </div>
